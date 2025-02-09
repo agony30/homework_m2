@@ -1,7 +1,7 @@
-import typing
+from typing import List
 
 
-def filter_by_state(user_dicts: typing.Iterable[dict], state: str = 'EXECUTED') -> typing.Iterable[dict]:
+def filter_by_state(user_dicts: List[dict], state: str = 'EXECUTED') -> List[dict]:
     """ Функция для фильтрации словарей, в зависимости от переданного ключа"""
     filtered_dicts: list = []  # Список словарей, которые будем возвращать
     for user_dict in user_dicts:  # Перебор поступивших словарей
@@ -11,7 +11,7 @@ def filter_by_state(user_dicts: typing.Iterable[dict], state: str = 'EXECUTED') 
     return filtered_dicts
 
 
-def sort_by_date(user_dicts: typing.Iterable[dict], reverse: bool = False) -> typing.Iterable[dict]:
+def sort_by_date(user_dicts: List[dict], reverse: bool = False) -> List[dict]:
     """ Функция для сортировки словарей пользователя по дате"""
 
     return sorted(user_dicts, key=lambda x: x['date'], reverse=reverse)  # Сортировка по датам в формате str
