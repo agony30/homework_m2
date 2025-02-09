@@ -3,12 +3,12 @@ import typing
 
 def filter_by_state(user_dicts: typing.Iterable[dict], state: str = 'EXECUTED') -> typing.Iterable[dict]:
     """ Функция для фильтрации словарей, в зависимости от переданного ключа"""
-    new_dicts = []  # Список словарей, которые будем возвращать
-    for one_dict in user_dicts:  # Перебор поступивших словарей
-        if one_dict['state'] == state:
-            new_dicts.append(one_dict)
+    filtered_dicts: list = []  # Список словарей, которые будем возвращать
+    for user_dict in user_dicts:  # Перебор поступивших словарей
+        if user_dict['state'] == state:
+            filtered_dicts.append(user_dict)
 
-    return new_dicts
+    return filtered_dicts
 
 
 def sort_by_date(user_dicts: typing.Iterable[dict], reverse: bool = False) -> typing.Iterable[dict]:
