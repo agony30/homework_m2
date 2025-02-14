@@ -1,14 +1,16 @@
-p_list = ["п", "ф", "а", "я", "о", "б"]
+import math
+import pytest
 
-print(p_list)
-print(len(p_list))
-while True:  # сортировка символов
-    cycle = 0
-    for i in range(len(p_list) - 1):
-        if p_list[i][1] < p_list[i + 1][1] or (p_list[i][0] > p_list[i + 1][0] and p_list[i][1] == p_list[i + 1][1]):
-            p_list[i], p_list[i + 1] = p_list[i + 1], p_list[i]
-            cycle += 1
-    if cycle == 0:
-        break
+def calculate_logarithm(number):
 
-print(p_list)
+    if number <= 0:
+        raise ValueError("Логарифм можно вычислить только для положительных чисел")
+    return math.log(number)
+
+
+def test_calculate_logarithm_with_negative_number():
+    with pytest.raises(ValueError) as exc_info:
+        calculate_logarithm(-1)
+
+    # Проверяем, что сообщение об ошибке соответствует ожидаемому
+    assert str(exc_info.value) == "Логарифм можно вычислить только для положительных чисел"
