@@ -1,4 +1,4 @@
-def reverse_list(my_list):
-    return my_list[::-1]
+# def add_func(a: int, b: int = 1) -> int:
+#     return a + b
 
 # print(reverse_list([7, 5, 1]))

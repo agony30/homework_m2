@@ -8,6 +8,6 @@
 import pytest
 
 
-@pytest.fixture
-def example_list():
-    return [1, 5, 7]
+# @pytest.fixture
+# def aa(*args):
+#     return 2
