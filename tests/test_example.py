@@ -10,7 +10,7 @@
 # @pytest.mark.parametrize("aa, bb, cc", [(2, 5, 7), (1, 3, 14), (0, 2, 2)])
 # def test_add_func1(aa, bb, cc):
 #     assert add_func(aa, bb) == cc
-    # assert add_func(aa, cc) == dd
+#     assert add_func(aa, cc) == dd
 
 
 # @pytest.mark.parametrize("bb, cc", [(33, 35), (20, 22), (0, 2)])

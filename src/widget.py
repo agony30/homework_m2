@@ -2,14 +2,14 @@ from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(bank_data: str) -> str:
-    """ Функция для маскировки номеров счетов и карт"""
+    """Функция для маскировки номеров счетов и карт"""
     bank_data_number: str = bank_data.split()[-1]  # Извлечение номера в формате str
-    beginning: str = bank_data[:-len(bank_data_number)]  # Сохранение названия кроме номера
+    beginning: str = bank_data[: -len(bank_data_number)]  # Сохранение названия кроме номера
 
     if len(bank_data_number) == 16:  # Если номер карты, использовать модуль для карты
-        mask_number: str = get_mask_card_number(bank_data_number)
+        mask_number = get_mask_card_number(bank_data_number)
     else:  # Раз это не карта, использовать модуль для счёта
-        mask_number: str = get_mask_account(bank_data_number)
+        mask_number = get_mask_account(bank_data_number)
 
     return f"{beginning}{mask_number}"  # Возврат строки: Название + замаскированный номер
 
