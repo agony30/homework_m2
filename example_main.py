@@ -13,3 +13,15 @@
 #
 # my_func = squares_sum()
 # print(my_func)
+
+
+# def make_mult(x):
+#
+#     def mult2(y):
+#         return x + y + y
+#
+#     return mult2
+#
+# double = make_mult("5")("2")
+# print(double)
+

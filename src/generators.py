@@ -1,20 +1,20 @@
-from typing import Generator
+from typing import Iterator
 
 
-def filter_by_currency(transactions_list: list[dict], currency_code: str) -> Generator[dict]:
+def filter_by_currency(transactions_list: list[dict], currency_code: str) -> Iterator[dict]:
     """Генератор словарей с транзакциями из переданного списка транзакций, по указанной валюте"""
     for transaction in transactions_list:
         if transaction["operationAmount"]["currency"]["code"] == currency_code:
             yield transaction
 
 
-def transaction_descriptions(transactions_list: list[dict]) -> Generator[str]:
+def transaction_descriptions(transactions_list: list[dict]) -> Iterator[str]:
     """Генератор описания транзакции из переданного списка транзакций"""
     for transaction in transactions_list:
         yield transaction["description"]
 
 
-def card_number_generator(start_num: int, finish_num: int) -> Generator[str]:
+def card_number_generator(start_num: int, finish_num: int) -> Iterator[str]:
     """Генератор номеров карт в указанном диапазоне"""
     while start_num <= finish_num:
         str_num = str(start_num).zfill(16)
