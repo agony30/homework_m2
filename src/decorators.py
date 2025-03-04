@@ -19,7 +19,7 @@ def log(filename=25):
 
 
 @log()
-def summerik(a, b):
+def summ(a, b):
     print(a+b)
 
-summerik(1, 30)
+summ(1, 30)
