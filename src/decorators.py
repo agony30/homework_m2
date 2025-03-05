@@ -1,18 +1,25 @@
-def log(filename=None):
-    def decorator(func):
-        def inner(*args, **kwargs):
-            
-            result = func(*args, **kwargs)
+def log(filename=25):
+    def my_decorator(func):
+        def inner(*args, **qwargs):
+            print(f"Аргументы декоратора: {filename}")
+            result = func(*args, **qwargs)
             return result
         return inner
-    return decorator
+    return my_decorator
+
+# def log(arg1=7):
+#     def my_decorator(func):
+#         def wrapper(*args, **kwargs):
+#             print(f"Аргументы декоратора: {arg1}")
+#             result = func(*args, **kwargs)
+#             print("После выполнения функции")
+#             return result
+#         return wrapper
+#     return my_decorator
 
 
-# код проверки
+@log()
+def summ(a, b):
+    print(a+b)
 
-@log(filename="mylog.txt")
-def my_function(x, y):
-    return x + y
-
-my_function(2, 3)
-# my_function("g", 4)
+summ(1, 30)
