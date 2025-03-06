@@ -1,8 +1,20 @@
-def log(filename=25):
+def log(filename=None):
     def my_decorator(func):
-        def inner(*args, **qwargs):
-            print(f"Аргументы декоратора: {filename}")
-            result = func(*args, **qwargs)
+        def inner(*args, **kwargs):
+
+            try:
+                result = func(*args, **kwargs)
+                message = f'{func.__name__} OK\n'
+            except Exception as error:
+                result = None
+                message = f'{func.__name__} error: {error}. Inputs: {args}, {kwargs}\n'
+            finally:
+                if filename:
+                    with open(filename, "a", encoding='utf-8') as log_file:
+                        log_file.write(message)
+                else:
+                    print(message)
+
             return result
         return inner
     return my_decorator
@@ -18,8 +30,8 @@ def log(filename=25):
 #     return my_decorator
 
 
-@log()
+@log("log.txt")
 def summ(a, b):
     print(a+b)
 
-summ(1, 30)
+summ("5", 12)
