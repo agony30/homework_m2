@@ -1,7 +1,4 @@
 summ OK
 summ OK
 summ OK
-ERROR
-ERROR
 summ OK
-summ error: can only concatenate str (not "int") to str. Inputs: ('5', 12), {}

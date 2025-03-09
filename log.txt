@@ -1,0 +1,16 @@
+summ error: can only concatenate str (not "int") to str. Inputs: ('5', 12), {}
+sub_numbers OK
+summ error: can only concatenate str (not "int") to str. Inputs: ('5', 12), {}
+sub_numbers OK
+summ error: can only concatenate str (not "int") to str. Inputs: ('5', 12), {}
+sub_numbers OK
+summ error: can only concatenate str (not "int") to str. Inputs: ('5', 12), {}
+sub_numbers OK
+summ error: can only concatenate str (not "int") to str. Inputs: ('5', 12), {}
+sub_numbers OK
+summ error: can only concatenate str (not "int") to str. Inputs: ('5', 12), {}
+sub_numbers OK
+summ OK
+sub_numbers OK
+summ OK
+sub_numbers OK

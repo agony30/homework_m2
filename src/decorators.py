@@ -3,6 +3,7 @@ def log(filename=None):
         def inner(*args, **kwargs):
 
             try:
+                print(args)
                 result = func(*args, **kwargs)
                 message = f'{func.__name__} OK\n'
             except Exception as error:
@@ -32,6 +33,6 @@ def log(filename=None):
 
 @log("log.txt")
 def summ(a, b):
-    print(a+b)
+    print(a + b)
 
-summ("5", 12)
+summ(5, 12)

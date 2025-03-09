@@ -9,7 +9,7 @@ def test_log():
     result1 = add_numbers(3, 5)
     assert result1 == 8
 
-    @log("test_log.txt")
+    @log("log.txt")
     def sub_numbers(a, b):
         return a - b
 
