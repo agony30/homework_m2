@@ -36,7 +36,7 @@ from src.processing import filter_by_state, sort_by_date
         ),
     ],
 )
-def test_filter_by_state(user_dicts, state, filtered_dicts):
+def test_filter_by_state(user_dicts: list, state: str, filtered_dicts: list) -> None:
     assert filter_by_state(user_dicts, state) == filtered_dicts
 
 
@@ -82,7 +82,7 @@ def test_filter_by_state(user_dicts, state, filtered_dicts):
         ),
     ],
 )
-def test_sort_by_date(user_dicts, reverse, sort_dicts):
+def test_sort_by_date(user_dicts: list, reverse: bool, sort_dicts: list) -> None:
     assert sort_by_date(user_dicts, reverse) == sort_dicts
 
 

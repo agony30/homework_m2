@@ -2,3 +2,4 @@ summ OK
 summ OK
 summ OK
 summ OK
+_summ Start_time = 2025-03-09 13:19:03.293066 End_time = 2025-03-09 13:19:03.293113 error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (5, '12'), {}

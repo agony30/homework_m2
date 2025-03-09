@@ -1,4 +1,4 @@
-from typing import Iterator
+from typing import Any, Iterator
 
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
@@ -6,7 +6,7 @@ from src.generators import card_number_generator, filter_by_currency, transactio
 # Проверьте, что функция правильно обрабатывает случаи, когда транзакции в заданной валюте отсутствуют.
 # Убедитесь, что генератор не завершается ошибкой при обработке пустого списка или
 # списка без соответствующих валютных операций.
-def test_filter_by_currency(transactions):
+def test_filter_by_currency(transactions: Any) -> None:
     assert isinstance(filter_by_currency(transactions, "USD"), Iterator)
 
     usd_transactions = filter_by_currency(transactions, "USD")
@@ -43,7 +43,7 @@ def test_filter_by_currency(transactions):
 
 # Тестируйте работу функции с различным количеством входных транзакций, включая пустой список.
 # Попытаться использовать параметризацию
-def test_transaction_descriptions(transactions):
+def test_transaction_descriptions(transactions: Any) -> None:
 
     assert isinstance(transaction_descriptions(transactions), Iterator)
 
@@ -56,7 +56,7 @@ def test_transaction_descriptions(transactions):
 
 # Проверьте корректность форматирования номеров карт.
 # Убедитесь, что генератор корректно обрабатывает крайние значения диапазона и правильно завершает генерацию.
-def test_card_number_generator():
+def test_card_number_generator() -> None:
     assert isinstance(card_number_generator(1, 5), Iterator)
     numbers_gen = card_number_generator(1, 5)
     assert next(numbers_gen) == "0000 0000 0000 0001"

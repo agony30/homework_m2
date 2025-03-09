@@ -1,18 +1,27 @@
-import pytest
+from typing import Union, Any
+
 from src.decorators import log
 
-def test_log():
+
+def test_log_output(capsys: Any) -> None:
+
     @log()
-    def add_numbers(a, b):
+    def add_numbers(a: Union[int, float], b: Union[int, float]) -> Union[int, float]:
         return a + b
 
-    result1 = add_numbers(3, 5)
-    assert result1 == 8
+    add_numbers(5, 6)
+    captured = capsys.readouterr()
+    assert captured.out == "add_numbers OK\n\n"
 
-    @log("log.txt")
-    def sub_numbers(a, b):
+
+def test_log_in_file() -> None:
+
+    file_name = "log.txt"
+
+    @log(file_name)
+    def sub_numbers(a: Union[int, float], b: Union[int, float]) -> Union[int, float]:
         return a - b
 
-    result2 = sub_numbers(21, 4)
-    assert result2 == 17
-
+    sub_numbers(8, 4)
+    with open(file_name, "r", encoding="utf-8") as log_file:
+        assert log_file.readlines()[-1] == "sub_numbers OK\n"

@@ -1,4 +1,7 @@
-def get_mask_card_number(card_number: str = "") -> str:
+from typing import Optional
+
+
+def get_mask_card_number(card_number: Optional[str] = "") -> str:
     """Функция для возврата маски номера карты"""
 
     if not card_number or len(card_number) != 16:  # Проверка на наличие номера
@@ -16,7 +19,7 @@ def get_mask_card_number(card_number: str = "") -> str:
     return mask_card_number
 
 
-def get_mask_account(account: str = "") -> str:
+def get_mask_account(account: Optional[str] = "") -> str:
     """Функция для возврата маски номера счёта (аккаунта)"""
 
     if not account or len(account) != 20:  # Проверка на наличие номера
