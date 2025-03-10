@@ -25,3 +25,6 @@
 # double = make_mult("5")("2")
 # print(double)
 
+# with open("example.txt", "r", encoding='utf-8') as example_file:
+#     for i in example_file:
+#         print(i)
